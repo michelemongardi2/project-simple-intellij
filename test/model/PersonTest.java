@@ -7,16 +7,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
 
+    private static final String personName = "Michele";
+    private static final String testNameToCompare = "Michele";
     private Person person;
 
     @BeforeEach
     void setUp() {
-        person = new Person("Bob", 33);
+        person = new Person(personName, 33);
     }
 
     @Test
     void testGetName() {
-        assertEquals("Bob", person.getName());
+        assertEquals(testNameToCompare, person.getName());
     }
 
     @Test
