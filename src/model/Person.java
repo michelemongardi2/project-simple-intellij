@@ -17,7 +17,6 @@ public class Person {
         return age;
     }
 
-
     public void updateAge(int newAge) {
         this.age = newAge;
     }

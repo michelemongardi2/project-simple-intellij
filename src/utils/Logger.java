@@ -7,7 +7,7 @@ public class Logger {
 
     public static void logPrintStrings(String[] array){
         for (String s: array){
-            System.out.format("[Print] %s\n",s);
+            System.out.format("[Print] Hello %s\n",s);
         }
     }
 }

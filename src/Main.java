@@ -1,13 +1,27 @@
 import model.Person;
-import utils.Logger;
+import utils.*;
+
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    public static final String personsName = "Michele";
-    public static final int age = 25;
+    private static final String personsName = "Michele";
+    private static final int personsAge = 25;
 
     public static void main(String[] args){
-        Logger l = new Logger();
-        Person p = new Person(personsName, age);
-        Logger.logPrintString("Hello " + p);
+        Person person = new Person(personsName, personsAge);
+        Logger.logPrintString("Hello " + person);
+
+        Random random = new Random();
+        List<Person> personListToLog = new ArrayList<>();
+
+        for (PeopleToLog e: PeopleToLog.values()) {
+            personListToLog.add(new Person(e.toString(), random.nextInt(20, 50)));
+        }
+
+        Logger.logPrintStrings(personListToLog.stream()
+                        .map(Person::getName)
+                        .toArray(String[]::new));
     }
 }

@@ -2,18 +2,21 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import utils.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
 
-    private static final String personName = "Michele";
+    private static final String personsName = "Michele";
+    private static final int personsAge = 33;
     private static final String testNameToCompare = "Michele";
+
     private Person person;
 
     @BeforeEach
     void setUp() {
-        person = new Person(personName, 33);
+        person = new Person(personsName, personsAge);
     }
 
     @Test
